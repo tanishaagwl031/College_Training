@@ -1,1 +1,203 @@
+/* Arrays
+Topics: 1D Arrays, 2D Arrays, Traversal */
 
+
+// 1. Maximum Element
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter the size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int max = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    cout << "Maximum element = " << max << endl;
+
+    return 0;
+}
+
+
+// 2. Minimum Element
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter the size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int min = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    cout << "Minimum element = " << min << endl;
+
+    return 0;
+}
+
+
+// 3. Array Sum
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+
+    cout << "Enter the size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        sum = sum + arr[i];
+    }
+
+    cout << "Sum of array elements = " << sum << endl;
+
+    return 0;
+}
+
+
+// 4. Reverse Array
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter the size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "Array in reverse order: ";
+    for (int i = n - 1; i >= 0; i--) {
+        cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+
+
+// 5. Second Largest Element
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+
+    cout << "Enter the size of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int largest = arr[0];
+    int secondLargest = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        }
+        else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    cout << "Second largest element = " << secondLargest << endl;
+
+    return 0;
+}
+
+
+// 6. Matrix Addition
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int rows, cols;
+
+    cout << "Enter number of rows and columns: ";
+    cin >> rows >> cols;
+
+    int a[10][10], b[10][10], sum[10][10];
+
+    cout << "Enter elements of first matrix:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    cout << "Enter elements of second matrix:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cin >> b[i][j];
+        }
+    }
+
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            sum[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    cout << "Sum of matrices:\n";
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            cout << sum[i][j] << " ";  
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
