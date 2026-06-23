@@ -1,1 +1,173 @@
+/* Functions
+Topics: Function Declaration, Definition, Parameters, Return Values, Scope */
 
+
+// 1. Sum function
+
+#include <iostream>
+using namespace std;
+
+int sum(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int a, b;
+
+    cout << "Enter first number: ";
+    cin >> a;
+
+    cout << "Enter second number: ";
+    cin >> b;
+
+    cout << "Sum = " << sum(a, b) << endl;
+
+    return 0;
+}
+
+
+// 2. Maximum of two numbers
+
+#include <iostream>
+using namespace std;
+
+int maximum(int a, int b) {
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+
+int main() {
+    int a, b;
+
+    cout << "Enter first number: ";
+    cin >> a;
+
+    cout << "Enter second number: ";
+    cin >> b;
+
+    cout << "Maximum number = " << maximum(a, b) << endl;
+
+    return 0;
+}
+
+
+// 3. Prime Check function
+
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if (n < 2)
+        return false;
+
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+
+    return true;
+}
+
+int main() {
+    int n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (isPrime(n))
+        cout << n << "Prime Number";
+    else
+        cout << n << "not a Prime Number";
+
+    return 0;
+}
+
+
+// 4. Factorial function
+
+#include <iostream>
+using namespace std;
+
+long long factorial(int n) {
+    long long fact = 1;
+
+    for (int i = 1; i <= n; i++) {
+        fact = fact * i;
+    }
+
+    return fact;
+}
+
+int main() {
+    int n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << "Factorial of " << n << " = " << factorial(n) << endl;
+
+    return 0;
+}
+
+
+// 5. Power function
+
+#include <iostream>
+using namespace std;
+
+int power(int base, int exponent) {
+    int result = 1;
+
+    for (int i = 1; i <= exponent; i++) {
+        result = result * base;
+    }
+
+    return result;
+}
+
+int main() {
+    int base, exponent;
+
+    cout << "Enter base: ";
+    cin >> base;
+
+    cout << "Enter exponent: ";
+    cin >> exponent;
+
+    cout << base << " raised to the power " << exponent
+         << " = " << power(base, exponent) << endl;
+
+    return 0;
+}
+
+
+// 6. GCD function
+
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) 
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+
+    cout << "Enter first number: ";
+    cin >> a;
+
+    cout << "Enter second number: ";
+    cin >> b;
+
+    cout << "GCD = " << gcd(a, b) << endl;
+
+    return 0;
+}
