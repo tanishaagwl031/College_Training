@@ -1,1 +1,175 @@
+/* Conditional Statements
+Topics: if, if-else, nested if, switch */
 
+
+// 1. Even/Odd
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (num % 2 == 0) {
+        cout << num << " is an Even number." << endl;
+    } else {
+        cout << num << " is an Odd number." << endl;
+    }
+
+    return 0;
+}
+
+
+// 2. Largest of Three Numbers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c;
+
+    cout << "Enter three numbers: ";
+    cin >> a >> b >> c;
+
+    if (a >= b && a >= c) {
+        cout << "Largest number = " << a << endl;
+    }
+    else if (b >= a && b >= c) {
+        cout << "Largest number = " << b << endl;
+    }
+    else {
+        cout << "Largest number = " << c << endl;
+    }
+
+    return 0;
+}
+
+
+// 3. Leap Year
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int year;
+
+    cout << "Enter a year: ";
+    cin >> year;
+
+    if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+        cout << year << " is a Leap Year." << endl;
+    }
+    else {
+        cout << year << " is not a Leap Year." << endl;
+    }
+
+    return 0;
+}
+
+
+// 4. Grade Calculator
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float marks;
+
+    cout << "Enter your marks (0-100): ";
+    cin >> marks;
+
+    if (marks >= 90) {
+        cout << "Grade: A+" << endl;
+    }
+    else if (marks >= 80) {
+        cout << "Grade: A" << endl;
+    }
+    else if (marks >= 70) {
+        cout << "Grade: B" << endl;
+    }
+    else if (marks >= 60) {
+        cout << "Grade: C" << endl;
+    }
+    else if (marks >= 50) {
+        cout << "Grade: D" << endl;
+    }
+    else {
+        cout << "Grade: F" << endl;
+    }
+
+    return 0;
+}
+
+
+// 5. Positive/Negative/Zero
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (num > 0) {
+        cout << num << " is Positive." << endl;
+    }
+    else if (num < 0) {
+        cout << num << " is Negative." << endl;
+    }
+    else {
+        cout << "The number is Zero." << endl;
+    }
+
+    return 0;
+}
+
+
+// 6. Simple Calculator
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float x, y;
+    char op;
+
+    cout << "Enter first number: ";
+    cin >> x;
+
+    cout << "Enter an operator (+, -, *, /): ";
+    cin >> op;
+
+    cout << "Enter second number: ";
+    cin >> y;
+
+    switch(op) {
+        case '+':
+            cout << "Result = " << x + y << endl;
+            break;
+
+        case '-':
+            cout << "Result = " << x - y << endl;
+            break;
+
+        case '*':
+            cout << "Result = " << x * y << endl;
+            break;
+
+        case '/':
+            if (y != 0)
+                cout << "Result = " << x / y << endl;
+            else
+                cout << "Error! Division by zero is not allowed." << endl;
+            break;
+
+        default:
+            cout << "Invalid Operator!" << endl;
+    }
+
+    return 0;
+}
