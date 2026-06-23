@@ -1,1 +1,128 @@
+/* Basics
+Topics: Variables, Data Types, Input/Output, Operators */
 
+
+// 1. Hello World
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World" << endl;
+    return 0;
+}
+
+
+// 2. Sum of two numbers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, sum;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    sum = num1 + num2;
+
+    cout << "Sum = " << sum << endl;
+
+    return 0;
+}
+
+
+// 3. Area of rectangle
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float length, width, area;
+
+    cout << "Enter length of rectangle: ";
+    cin >> length;
+
+    cout << "Enter width of rectangle: ";
+    cin >> width;
+
+    area = length * width;
+
+    cout << "Area of rectangle = " << area << endl;
+
+    return 0;
+}
+
+
+// 4. Simple interest
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float principal, rate, time, simpleInterest;
+
+    cout << "Enter Principal Amount: ";
+    cin >> principal;
+
+    cout << "Enter Rate of Interest: ";
+    cin >> rate;
+
+    cout << "Enter Time (in years): ";
+    cin >> time;
+
+    simpleInterest = (principal * rate * time) / 100;
+
+    cout << "Simple Interest = " << simpleInterest << endl;
+
+    return 0;
+}
+
+
+// 5. Swap two numbers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, temp;
+
+    cout << "Enter first number: ";
+    cin >> num1;
+
+    cout << "Enter second number: ";
+    cin >> num2;
+
+    // Swapping the numbers
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+
+    cout << "After swapping:" << endl;
+    cout << "First number = " << num1 << endl;
+    cout << "Second number = " << num2 << endl;
+
+    return 0;
+}
+
+
+// 6. Celsius to Fahrenheit
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    float celsius, fahrenheit;
+
+    cout << "Enter temperature in Celsius: ";
+    cin >> celsius;
+
+    fahrenheit = (celsius * 9 / 5) + 32;
+
+    cout << "Temperature in Fahrenheit = " << fahrenheit << endl;
+
+    return 0;
+}
