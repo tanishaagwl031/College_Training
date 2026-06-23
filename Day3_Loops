@@ -1,1 +1,151 @@
+/* Loops
+Topics: for, while, do-while, nested loops */
 
+
+// 1. Print all integers from 1 to N
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+
+    cout << "Enter a number: ";
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        cout << i << " ";
+    }
+
+    return 0;
+}
+
+
+// 2. Sum of N numbers
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N, sum = 0;
+
+    cout << "Enter a number: ";
+    cin >> N;
+
+    for (int i = 1; i <= N; i++) {
+        sum = sum + i;
+    }
+
+    cout << "Sum of integers from 1 to " << N << " = " << sum << endl;
+
+    return 0;
+}
+
+
+// 3. Factorial
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    long long factorial = 1;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        factorial = factorial * i;
+    }
+
+    cout << "Factorial of " << n << " = " << factorial << endl;
+
+    return 0;
+}
+
+
+// 4. Reverse Number
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, reverse = 0, digit;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    while (num != 0) {
+
+        // Get the last digit of the number
+        digit = num % 10;
+
+        // Add the digit to the reversed number
+        reverse = reverse * 10 + digit;
+
+        // Remove the last digit from the number
+        num = num / 10;
+    }
+
+    cout << "Reversed number = " << reverse << endl;
+
+    return 0;
+}
+
+
+// 5. Count Digits 
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, count = 0;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    while (num != 0) 
+    {
+       count++;
+       num = num / 10;
+    }
+
+    cout << "Number of digits = " << count << endl;
+
+    return 0;
+}
+
+
+// 6. Prime Number Check
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, i;
+    bool isPrime = true;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if (num < 2) {
+        isPrime = false;
+    }
+    else {
+        for (i = 2; i < num; i++) {
+            if (num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime) {
+        cout << num << " is a Prime Number." << endl;
+    }
+    else {
+        cout << num << " is not a Prime Number." << endl;
+    }
+
+    return 0;
+}
