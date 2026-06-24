@@ -1,1 +1,188 @@
+/* Recursion
+Topics: Base Case, Recursive Calls */
 
+
+// 1. Factorial of a number
+
+#include <iostream>
+using namespace std;
+
+// Recursive function to find factorial
+long long factorial(int n)
+{
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main()
+{
+    int n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << "Factorial of " << n << " = " << factorial(n) << endl;
+
+    return 0;
+}
+
+
+// 2. Fibonacci series
+
+#include <iostream>
+using namespace std;
+
+// Recursive function to find Fibonacci term
+int fibonacci(int n)
+{
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main()
+{
+    int n;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    cout << "Fibonacci Series: ";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << fibonacci(i) << " ";
+    }
+
+    cout << endl;
+
+    return 0;
+}
+
+
+// 3. Sum of N numbers
+
+#include <iostream>
+using namespace std;
+
+// Recursive function to find sum
+int sum(int n)
+{
+    if (n == 1)
+        return 1;
+    else
+        return n + sum(n - 1);
+}
+
+int main()
+{
+    int n;
+
+    cout << "Enter a number: ";
+    cin >> n;
+
+    cout << "Sum of first " << n << " natural numbers = " << sum(n) << endl;
+
+    return 0;
+}
+
+
+// 4. Power function
+
+#include <iostream>
+using namespace std;
+
+// Recursive function to calculate power
+long long power(int x, int n)
+{
+    if (n == 0)
+        return 1;
+    else
+        return x * power(x, n - 1);
+}
+
+int main()
+{
+    int x, n;
+
+    cout << "Enter the base number: ";
+    cin >> x;
+
+    cout << "Enter the exponent: ";
+    cin >> n;
+
+    cout << x << "^" << n << " = " << power(x, n) << endl;
+
+    return 0;
+}
+
+
+// 5. Reverse String
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Recursive function to print string in reverse
+void reverseString(string str, int index)
+{
+    if (index < 0)
+        return;
+
+    cout << str[index];
+    reverseString(str, index - 1);
+}
+
+int main()
+{
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    cout << "Reversed string: ";
+    reverseString(str, str.length() - 1);
+
+    cout << endl;
+
+    return 0;
+}
+
+
+// 6. Palindrome Check
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Recursive function to check palindrome
+bool isPalindrome(string str, int start, int end)
+{
+    if (start >= end)
+        return true;
+
+    if (str[start] != str[end])
+        return false;
+
+    return isPalindrome(str, start + 1, end - 1);
+}
+
+int main()
+{
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    if (isPalindrome(str, 0, str.length() - 1))
+        cout << "The string is a palindrome." << endl;
+    else
+        cout << "The string is not a palindrome." << endl;
+
+    return 0;
+}
