@@ -1,1 +1,190 @@
+/* Strings
+Topics: String Class, Traversal, Common Operations */
 
+
+// 1. Count Vowels
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string str;
+    int count = 0;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    for (int i = 0; i < str.length(); i++)
+    {
+        char ch = tolower(str[i]);
+
+        if (ch == 'a' || ch == 'e' || ch == 'i' ||
+            ch == 'o' || ch == 'u')
+        {
+            count++;
+        }
+    }
+
+    cout << "Number of vowels = " << count << endl;
+
+    return 0;
+}
+
+
+// 2. Reverse String
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    cout << "Reversed string: ";
+
+    for (int i = str.length() - 1; i >= 0; i--)
+    {
+        cout << str[i];
+    }
+
+    cout << endl;
+
+    return 0;
+}
+
+
+// 3. Palindrome Check
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string str, rev = "";
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    // Reverse the string
+    for (int i = str.length() - 1; i >= 0; i--)
+    {
+        rev += str[i];
+    }
+
+    // Check palindrome
+    if (str == rev)
+    {
+        cout << "The string is a palindrome." << endl;
+    }
+    else
+    {
+        cout << "The string is not a palindrome." << endl;
+    }
+
+    return 0;
+}
+
+
+// 4. Count Words in a string
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string str;
+    int words = 0;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    // Count words
+    for (int i = 0; i < str.length(); i++)
+    {
+        if ((i == 0 && str[i] != ' ') ||
+            (str[i] != ' ' && str[i - 1] == ' '))
+        {
+            words++;
+        }
+    }
+
+    cout << "Number of words = " << words << endl;
+
+    return 0;
+}
+
+
+// 5. Convert Lowercase to Uppercase
+
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main()
+{
+    string str;
+
+    cout << "Enter a string: ";
+    getline(cin, str);
+
+    // Convert to uppercase
+    for (int i = 0; i < str.length(); i++)
+    {
+        str[i] = toupper(str[i]);
+    }
+
+    cout << "Uppercase string: " << str << endl;
+
+    return 0;
+}
+
+
+// 6. Anagram Check
+
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string str1, str2;
+
+    cout << "Enter first string: ";
+    cin >> str1;
+
+    cout << "Enter second string: ";
+    cin >> str2;
+
+    // Check length
+    if (str1.length() != str2.length())
+    {
+        cout << "The strings are not anagrams." << endl;
+        return 0;
+    }
+
+    // Sort both strings
+    sort(str1.begin(), str1.end());
+    sort(str2.begin(), str2.end());
+
+    // Compare sorted strings
+    if (str1 == str2)
+    {
+        cout << "The strings are anagrams." << endl;
+    }
+    else
+    {
+        cout << "The strings are not anagrams." << endl;
+    }
+
+    return 0;
+}
