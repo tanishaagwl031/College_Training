@@ -1,1 +1,110 @@
+// Pair & Set
 
+// Student Record Using Pair
+
+#include <iostream>
+#include <utility>
+using namespace std;
+
+int main()
+{
+pair<int,string> student = {123,"xyz"};
+cout<<student.first<<endl;
+cout<<student.second;
+    return 0;
+}
+
+
+// 2. Unique Elements
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+set<int> s = {10,20,20,30,30,40};
+for(int x : s)
+cout<<x<<" ";
+    return 0;
+}
+
+
+// 3. Count Distinct Elements
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+int arr[] = {1,2,2,3,4,4,5};
+set<int> s(arr, arr+7);
+cout<<"Distinct Elements = "
+<<s.size();
+    return 0;
+}
+
+
+// 4. Union of Arrays
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+int a[] = {1,2,3};
+int b[] = {3,4,5};
+
+set<int> s;
+ 
+ for(int x : a) s.insert(x);
+ for(int x : b) s.insert(x);
+ 
+ for(int x : s)
+ cout<<x<<" ";
+    return 0;
+}
+
+
+// 5. Intersection of Arrays
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+set<int> a = {1,2,3,4};
+set<int> b = {3,4,5,6};
+for(int x : a)
+{
+ if(b.count(x))
+ cout<<x<<" ";
+}
+    return 0;
+}
+
+
+// 6. Remove Duplicates
+
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main()
+{
+int arr[] = {10,20,20,30,40,40,50};
+set<int> s;
+for(int x : arr)
+{
+    s.insert(x);
+}
+cout<<"After removing duplicates:";
+for(int x : s)
+{
+    cout<<x<<" ";
+}
+    return 0;
+}
