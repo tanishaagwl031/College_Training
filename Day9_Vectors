@@ -1,0 +1,112 @@
+/* Vectors
+Topics: vector, push_back(), pop_back(), iteration */
+
+
+// 1. Store and Print Elements
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> v = {30,40,50,60};
+    for(int x : v)
+    {
+        cout << x << " ";
+    }
+    return 0;
+}
+
+
+// 2. Maximum Element
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> v = {10,50,25,76,83};
+    int mx = v[0];
+    for(int x : v)
+    {
+        if(x > mx)
+        mx=x;
+    }
+    cout<<"Maximum = "<<mx;
+    return 0;
+}
+
+
+// 3. Minimum Element
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    vector<int> v = {10,50,25,76,83};
+    int min = v[0];
+    for(int x : v)
+    {
+        if(x < min)
+        min=x;
+    }
+    cout<<"Minimum = "<<min;
+    return 0;
+}
+
+// 4. Reverse Vector
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    vector<int> v = {1,2,3,4,5};
+    reverse(v.begin(), v.end());
+    for(int x : v)
+    cout<<x<<" ";
+    return 0;
+}
+
+
+// 5. Remove Duplicates
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    vector<int> v = {1,2,2,3,3,4,5};
+    sort(v.begin(), v.end());
+    v.erase(unique(v.begin(),v.end()),v.end());
+    for(int x : v)
+    cout<<x<<" ";
+    return 0;
+}
+
+
+// 6. Rotate Vector
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    vector<int> v = {1,2,3,4,5};
+    rotate(v.begin(),
+    v.begin()+3,
+    v.end());
+    for(int x : v)
+    cout<<x<<" ";
+    return 0;
+}
