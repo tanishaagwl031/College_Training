@@ -1,1 +1,141 @@
+/* Map
+Topics: map, Key-Value Pairs, Frequency Counting */
 
+
+// 1. Frequency of Elements
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    int arr[] = {1,2,2,3,3,3,4};
+    map<int,int> freq;
+    for(int x : arr)
+    {
+        freq[x]++;
+    }
+    for(auto x : freq)
+    {
+        cout<<x.first<<"->"
+        <<x.second<<endl;
+    }
+    return 0;
+}
+
+
+// 2. Character Frequency
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    string s = "banana";
+    map<char,int> freq;
+    for(char ch : s)
+    {
+        freq[ch]++;
+    }
+    for(auto x : freq)
+    {
+        cout<<x.first<<"->"
+        <<x.second<<endl;
+    }
+    return 0;
+}
+
+
+// 3. Most Frequent Element
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    int arr[] = {1,2,2,3,3,3,4};
+    map<int,int> freq;
+    for(int x : arr)
+    freq[x]++;
+    int ans = -1;
+    int mx = 0;
+    for(auto x : freq)
+    {
+        if(x.second > mx)
+        {
+            mx = x.second;
+            ans = x.first;
+        }
+    }
+    cout<<"Most Frequent = "<<ans;
+    return 0;
+}
+
+
+// 4. First Non-Repeating Character
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    string s = "aabbcde";
+    map<char,int> freq;
+    for(char ch : s)
+    freq[ch]++;
+    for(char ch : s)
+    {
+        if(freq[ch] == 1)
+        {
+            cout<<ch;
+            break;
+        }
+    }
+    return 0;
+}
+
+
+// 5. Word Frequency
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    map<string,int> words;
+    
+    words["apple"]++;
+    words["banana"]++;
+    words["apple"]++;
+    
+    for(auto x : words)
+    {
+        cout<<x.first<<"->"
+        <<x.second<<endl;
+    }
+    return 0;
+}
+
+
+// 6. Query Frequency Count
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+int main()
+{
+    int arr[] = {1,2,2,3,3,3};
+    map<int,int> freq;
+    for(int x : arr)
+    freq[x]++;
+    
+    cout<<freq[2]<<endl;
+    cout<<freq[3];
+    return 0;
+}
