@@ -1,1 +1,152 @@
+// 1. Student Class
 
+#include <iostream>
+using namespace std;
+class Student {
+    public:
+    string name;
+    int rollno;
+    float marks;
+    
+    void display()
+    {
+        cout<<"Name: " <<name<<endl;
+        cout<<"Roll No:" <<rollno<<endl;
+        cout<<"Marks:" <<marks<<endl;
+        }
+};
+int main() {
+Student s;
+s.name = "Tanisha";
+s.rollno = 101;
+s.marks = 90;
+s.display();
+return 0;
+}
+
+
+// 2. Employee Class
+
+#include <iostream>
+using namespace std;
+class Employee {
+    public:
+    string name;
+    int id;
+    
+    Employee(string n, int i) {
+        name = n;
+        id   = i;
+    }
+    void display()
+    {
+        cout<<"Name: " <<name<<endl;
+        cout<<"ID:" <<id<<endl;
+        }
+};
+int main() {
+Employee el("xyz", 101);
+el.display();
+return 0;
+}
+
+
+// 3. Rectangle Area
+
+#include <iostream>
+using namespace std;
+class Rectangle {
+    public:
+    int length, width;
+    
+    void setData(int l, int w) {
+        length = l;
+        width   = w;
+    }
+    
+    int area()
+    {
+        return length * width;
+        }
+};
+int main() {
+Rectangle r;
+r.setData(10, 5);
+cout<<"Area = "<<r.area();
+return 0;
+}
+
+
+// 4. Bank Account
+
+#include <iostream>
+using namespace std;
+class BankAccount {
+    public:
+    double balance = 0;
+    
+    void deposit(double amount) {
+        balance += amount;
+    }
+    
+    void withdraw(double amount) {
+        balance -= amount;
+    }
+    
+    void display() {
+        cout<<"Balance = "<<balance;
+    }
+};
+int main() {
+BankAccount b;
+b.deposit(5000);
+b.withdraw(2000);
+b.display();
+return 0;
+}
+
+
+// 5. Car + Static
+
+#include <iostream>
+using namespace std;
+class Car {
+    public:
+    static int count;
+    
+    Car() {
+        count++;
+    }
+};
+
+int Car::count = 0;
+
+int main() {
+Car c1, c2, c3;
+cout<<"Total Objects = "
+<< Car::count;
+return 0;
+}
+
+
+// 6. Box + this
+
+#include <iostream>
+using namespace std;
+class Box {
+    public:
+    int length;
+    
+    void setLength(int length) {
+        this->length = length;
+    }
+    void display() {
+        cout<<"Length = "<<length;
+    }
+};
+int main() {
+Box b;
+b.setLength(15);
+b.display();
+return 0;
+}
